@@ -1,0 +1,18 @@
+<p>
+  Public Photos from Flickr
+</p>
+<div class="bar">
+    <mat-form-field class="search-input">
+      <input matInput #searchtextbox type="text" [ngModel]="searchTextValue" (change)="updateSearch(searchtextbox.value)" placeholder="Enter your search terms" />
+    </mat-form-field>
+  </div>
+<mat-grid-list cols="3" rowHeight="2:1">
+
+  <mat-grid-tile *ngFor="let item of items ; let i = index" layout="row" layout-align="center end">
+    <div  class="mat-card">
+     
+        <img class="img" src="{{item.media.m}}" alt="{{item.link}}">
+ 
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>
